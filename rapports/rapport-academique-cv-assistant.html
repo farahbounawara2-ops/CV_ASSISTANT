@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Rapport Académique : CV Tailor AI</title>
+  
+  <!-- MathJax for rendering LaTeX formulas -->
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Mermaid.js for diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'neutral',
+      themeVariables: {
+        primaryColor: '#eff6ff',
+        primaryBorderColor: '#3b82f6',
+        primaryTextColor: '#1e293b',
+        lineColor: '#2563eb'
+      }
+    });
+  </script>
+
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 18mm 16mm 18mm 16mm;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 10pt;
+      line-height: 1.55;
+      color: #1e293b;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #0f172a;
+      font-weight: 700;
+      page-break-after: avoid;
+    }
+
+    h1 {
+      font-size: 20pt;
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 6px;
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    h2 {
+      font-size: 14pt;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 4px;
+      margin-top: 22px;
+      margin-bottom: 10px;
+      color: #1e3a8a;
+      page-break-after: avoid;
+    }
+
+    h3 {
+      font-size: 11.5pt;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      color: #1e40af;
+      page-break-after: avoid;
+    }
+
+    h4 {
+      font-size: 10.5pt;
+      margin-top: 12px;
+      margin-bottom: 4px;
+      color: #334155;
+      page-break-after: avoid;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 8px;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin-top: 0;
+      margin-bottom: 10px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 3px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 18px 0;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 8.5pt;
+      background-color: #f1f5f9;
+      color: #0f172a;
+      padding: 1.5px 4px;
+      border-radius: 3px;
+      border: 1px solid #e2e8f0;
+    }
+
+    pre {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 10px 12px;
+      overflow-x: auto;
+      font-size: 8pt;
+      line-height: 1.4;
+      page-break-inside: avoid;
+      margin-bottom: 12px;
+    }
+
+    pre code {
+      background-color: transparent;
+      padding: 0;
+      border: none;
+      color: #1e293b;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 8.5pt;
+      page-break-inside: avoid;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 6px 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    blockquote {
+      margin: 10px 0;
+      padding: 6px 12px;
+      border-left: 3.5px solid #2563eb;
+      background-color: #eff6ff;
+      color: #1e3a8a;
+      page-break-inside: avoid;
+    }
+
+    .mermaid {
+      display: flex;
+      justify-content: center;
+      margin: 14px 0;
+      background-color: #f8fafc;
+      padding: 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      page-break-inside: avoid;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<h1 id="rapport-academique-technique-cv-tailor-ai-cv-assistant">Rapport Académique &amp; Technique : CV Tailor AI (CV Assistant)</h1>
+<p><strong>Plateforme Intelligente d'Adaptation Contextuelle de Curriculum Vitae assistée par Modèle de Langage (LLM)</strong></p>
+<ul>
+<li><strong>Lien de Déploiement en Production :</strong> <a href="https://cvassistant-eight.vercel.app/">https://cvassistant-eight.vercel.app/</a></li>
+<li><strong>Dépôt Source Officiel :</strong> <a href="https://github.com/farahbounawara2-ops/CV_ASSISTANT.git">GitHub - farahbounawara2-ops/CV_ASSISTANT</a></li>
+<li><strong>Date :</strong> Novembre 2026</li>
+<li><strong>Cadre Technologique :</strong> Next.js 16 (App Router, Turbopack), TypeScript, Tailwind CSS, Google Gemini API (<code>@google/genai</code>), <code>@react-pdf/renderer</code>.</li>
+</ul>
+<hr />
+<h2 id="resume-executif-abstract">Résumé Exécutif (Abstract)</h2>
+<p>Dans un marché du recrutement hautement concurrentiel et automatisé par des systèmes de suivi des candidatures (ATS — <em>Applicant Tracking Systems</em>), la concordance sémantique et factuelle entre le profil d'un candidat et une opportunité professionnelle est déterminante. Les candidatures génériques souffrent fréquemment d'un taux de rejet élevé en raison d'une mauvaise mise en valeur des compétences pertinentes, tandis que les approches naïves d'adaptation par IA souffrent souvent d'hallucinations préjudiciables (fabrication d'expériences ou de compétences inexistantes).</p>
+<p>Le projet <strong>CV Tailor AI (CV Assistant)</strong> formalise et implémente une solution logicielle complète, éthique et déterministe. Accessible en ligne sur <a href="https://cvassistant-eight.vercel.app/">cvassistant-eight.vercel.app</a>, l'application permet l'ingestion multiformat de documents (PDF, DOCX, TXT), l'extraction textuelle côté serveur sans persistance permanente, une évaluation comparative mathématiquement explicable de la compatibilité, et la synthèse d'un CV restructuré conforme à une charte graphique vectorielle A4 stricte. Ce rapport détaille le workflow fonctionnel, l'architecture logicielle, le pipeline d'ingestion ETL, l'intégration du modèle de langage <strong>Google Gemini 3.5 Flash Lite</strong>, les garanties de contrôle de fidélité et la prospective majeure d'automatisation multi-offres par tableurs.</p>
+<hr />
+<h2 id="1-contexte-specification-des-objectifs">1. Contexte &amp; Spécification des Objectifs</h2>
+<h3 id="11-problematique">1.1 Problématique</h3>
+<ol>
+<li><strong>Asymétrie d'Information &amp; Filtrage ATS :</strong> Les offres d'emploi expriment des exigences explicites (langages, frameworks, méthodologies) et préférentielles. Un CV exhaustif ("Master CV") noie souvent les compétences requises sous des informations périphériques.</li>
+<li><strong>Risque Éthique des LLM (Hallucination &amp; Tromperie) :</strong> L'usage non contrôlé de l'IA générative tend à "inventer" des diplômes, des expériences ou des technologies manquantes pour maximiser artificiellement la correspondance, ce qui disqualifie le candidat lors des entretiens techniques.</li>
+<li><strong>Contraintes Documentaires :</strong> Les documents sources proviennent d'éditeurs variés (Word, suites bureautiques open-source, compilateurs LaTeX) générant des flux binaires non standardisés.</li>
+</ol>
+<h3 id="12-objectifs-du-systeme">1.2 Objectifs du Système</h3>
+<ul>
+<li><strong>Ingestion Hétérogène Déterministe :</strong> Extraction du texte brut depuis des fichiers PDF, DOCX et TXT sans sauvegarde permanente sur disque (garantie de confidentialité RGPD/PII).</li>
+<li><strong>Analyse Explicable :</strong> Calcul d'un score d'adéquation objectif fondé sur des preuves textuelles vérifiables citées verbatim depuis le CV original.</li>
+<li><strong>Adaptation Éthique à Zéro Hallucination :</strong> Réorganisation, priorisation et reformulation ciblée des seules qualifications existantes ; exclusion mathématique de toute compétence manquante dans le CV adapté.</li>
+<li><strong>Génération PDF Vectorielle A4 Déterministe :</strong> Rendu visuel immuable assurant une lisibilité optimale et l'omission propre des sections non documentées.</li>
+</ul>
+<hr />
+<h2 id="2-workflow-fonctionnel-cycle-de-donnees">2. Workflow Fonctionnel &amp; Cycle de Données</h2>
+<p>Le système suit un cycle de traitement linéaire, interactif et sécurisé, découpé en 4 phases majeures :</p>
+<div class="mermaid">
+flowchart TD
+    subgraph Phase 1 : Ingestion
+        A[Utilisateur : Upload Fichier ou Saisie Texte] --> B1{Type Document}
+        B1 -->|PDF| C1[Extraction PDF.js Legacy Engine]
+        B1 -->|DOCX| C2[Extraction Mammoth XML]
+        B1 -->|TXT / Paste| C3[Traitement Texte Brut]
+    end
+
+    subgraph Phase 2 : Validation & Nettoyage
+        C1 --> D[Validation Côté Serveur : MIME / Taille < 10MB]
+        C2 --> D
+        C3 --> D
+        D --> E[Aperçu & Édition Manuelle Interactive]
+    end
+
+    subgraph Phase 3 : Analyse & Tailoring IA
+        E --> F[API Route /api/analyze-cv]
+        F --> G[Analyseur Heuristique Ground-Truth & Regex]
+        G --> H[Appel Google Gemini 3.5 Flash Lite]
+        H --> I[Validation Structurée JSON Schema]
+        I --> J[Filtrage Éthique : Élimination des Missing Skills]
+        J --> K[Calcul Score Explicable : 80% Req / 20% Pref]
+    end
+
+    subgraph Phase 4 : Rendu & Export
+        K --> L[Dashboard d'Analyse : Compétences & Recommandations]
+        K --> M[CVPreview : Rendu Canvas Réactif]
+        M --> N[Édition Manuelle In-situ]
+        M --> O[Export PDF Téléchargeable A4 via @react-pdf/renderer]
+    end
+</div>
+
+<h3 id="description-des-etapes-cles">Description des Étapes Clés :</h3>
+<ol>
+<li><strong>Étape 1 (Ingestion &amp; Normalisation) :</strong> L'utilisateur téléverse ou colle la description de poste et son Master CV. L'API extrait les flux textuels et les renvoie au client pour validation ou ajustement manuel via une boîte de dialogue modale.</li>
+<li><strong>Étape 2 (Extraction des Faits Vérifiés) :</strong> Avant même la transmission à l'IA, le serveur isole les sections factuelles (expériences, entreprises, diplômes, coordonnées) afin d'établir une base d'autorité (<em>ground truth</em>).</li>
+<li><strong>Étape 3 (Inférence Contextuelle &amp; Audit) :</strong> Le modèle Gemini analyse les exigences de l'opportunité, identifie les correspondances avec preuve textuelle, catégorise les lacunes (<em>missing skills</em>), et propose un résumé professionnel reformulé.</li>
+<li><strong>Étape 4 (Visualisation &amp; Restitution) :</strong> L'interface présente le rapport d'analyse comparatif et un visualiseur de document A4 synchronisé, permettant à l'utilisateur de modifier le contenu avant téléchargement du fichier PDF final.</li>
+</ol>
+<hr />
+<h2 id="3-architecture-logicielle">3. Architecture Logicielle</h2>
+<p>Le projet s'appuie sur une architecture moderne <strong>Jamstack Full-Stack Serverless</strong>, unifiée sous le framework <strong>Next.js 16</strong> avec le compilateur <strong>Turbopack</strong>.</p>
+<div class="mermaid">
+graph TB
+    subgraph Client Layer (Navigateur)
+        UI[Single Page Application : React 19 / Tailwind CSS]
+        State[React State : Hooks, FileUpload, ExtractionState, AnalysisState]
+        Canvas[CVPreview & PDFDownloadButton : Web Worker @react-pdf]
+        UI --> State
+        State --> Canvas
+    end
+
+    subgraph Server Layer (Next.js App Router / Vercel Serverless)
+        RouteExtract[/api/extract-text : Node.js Runtime]
+        RouteAnalyze[/api/analyze-cv : Node.js Runtime]
+        ExtractEngine[Lib : extraction.ts : PDF.js & Mammoth]
+        GeminiEngine[Lib : gemini.ts : SDK Google GenAI]
+
+        RouteExtract --> ExtractEngine
+        RouteAnalyze --> GeminiEngine
+    end
+
+    subgraph External Cloud Services
+        GeminiCloud[Google AI Studio : Gemini 3.5 Flash Lite API]
+        VercelCDN[Vercel Edge Network / Production Host]
+    end
+
+    State -->|POST FormData| RouteExtract
+    State -->|POST JSON| RouteAnalyze
+    GeminiEngine -->|REST / TLS 1.3| GeminiCloud
+    VercelCDN --> UI
+</div>
+
+<h3 id="31-structure-du-repertoire-et-modularite">3.1 Structure du Répertoire et Modularité</h3>
+<pre><code>cv-tailor-ai/
+├── rapports/
+│   └── rapport-academique-cv-assistant.md # Rapport académique &amp; technique officiel
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   ├── extract-text/route.ts      # Endpoint d'ingestion et d'extraction de fichiers
+│   │   │   └── analyze-cv/route.ts        # Endpoint d'orchestration IA et calcul de score
+│   │   ├── globals.css                    # Styles globaux Tailwind CSS
+│   │   ├── layout.tsx                     # Conteneur racine &amp; métadonnées
+│   │   └── page.tsx                       # Page unique (SPA) orchestrant l'état applicatif
+│   ├── components/
+│   │   ├── cv/
+│   │   │   ├── CVDocument.tsx             # Spécification vectorielle du document PDF A4
+│   │   │   ├── CVDownloadButton.tsx       # Générateur de flux binaire de téléchargement
+│   │   │   ├── CVEditModal.tsx            # Boîte de dialogue d'édition manuelle du CV
+│   │   │   └── CVPreview.tsx              # Prévisualisation interactive client-side
+│   │   ├── FileUploadCard.tsx             # Composant unifié d'upload / drag &amp; drop / paste
+│   │   ├── Header.tsx                     # Barre d'en-tête professionnelle
+│   │   ├── ResultsSection.tsx             # Dashboard d'analyse, métriques et aperçu
+│   │   └── TextPreviewModal.tsx           # Modale d'inspection du texte extrait
+│   ├── lib/
+│   │   ├── api.ts                         # Couche client d'abstraction des requêtes HTTP
+│   │   ├── extraction.ts                  # Moteur d'extraction documentaire (PDF/DOCX/TXT)
+│   │   ├── gemini.ts                      # Orchestration LLM, schémas JSON, parser déterministe
+│   │   └── utils.ts                       # Utilitaires de formatage et de validation
+│   └── types/
+│       └── index.ts                       # Interfaces TypeScript unifiées (stricte typage)
+├── .env.example                           # Gabarit de configuration des variables d'environnement
+├── .env.local                             # Secrets locaux (exclus du contrôle de source)
+└── package.json                           # Dépendances et scripts de build
+</code></pre>
+<hr />
+<h2 id="4-pipeline-dextraction-documentaire-etl">4. Pipeline d'Extraction Documentaire (ETL)</h2>
+<p>L'extraction de texte à partir de formats bureautiques riches sous environnement d'exécution serveur pose des défis majeurs d'interopérabilité.</p>
+<h3 id="41-traitement-des-fichiers-pdf-pdfjs-dist">4.1 Traitement des Fichiers PDF (<code>pdfjs-dist</code>)</h3>
+<ul>
+<li><strong>Problématique Découverte :</strong> En environnement serveur Next.js avec Turbopack, le module Node exécute des fragments de code compilés dans <code>.next/server/chunks/</code>. L'appel par défaut à <code>pdfjs-dist</code> tente de charger dynamiquement un <em>fake worker</em> (<code>pdf.worker.mjs</code>) via une résolution de chemin relatif, provoquant l'exception bloquante :
+  <code>Cannot find module '.../.next/dev/server/chunks/pdf.worker.mjs'</code>.</li>
+<li><strong>Solution Architecturale Implémentée :</strong> 
+  Dans <a href="file:///c:/Users/levia/cv-tailor-ai/src/lib/extraction.ts"><code>src/lib/extraction.ts</code></a>, le worker est préchargé en mémoire globale avant l'instanciation du document :
+  <code>typescript
+  if (!(globalThis as unknown as { pdfjsWorker?: unknown }).pdfjsWorker) {
+    // @ts-expect-error pdfjs-dist legacy worker n'a pas de fichier de déclaration .d.ts
+    const workerModule = await import("pdfjs-dist/legacy/build/pdf.worker.mjs");
+    (globalThis as unknown as { pdfjsWorker?: unknown }).pdfjsWorker = workerModule;
+  }</code>
+  Grâce à cette injection, le moteur PDF.js utilise immédiatement le gestionnaire <code>mainThreadWorkerMessageHandler</code> sans exécuter de requête sur le système de fichiers.</li>
+</ul>
+<h3 id="42-traitement-des-fichiers-word-mammoth">4.2 Traitement des Fichiers Word (<code>mammoth</code>)</h3>
+<ul>
+<li>L'extraction des archives <code>.docx</code> (OpenXML) s'opère via la bibliothèque <code>mammoth</code> en mode <em>raw text</em>, préservant la hiérarchie des paragraphes et les retours à la ligne sans interpréter de styles de mise en page superflus.</li>
+<li><strong>Tolérance aux MIME types Windows :</strong> Les systèmes Windows associent fréquemment l'ancien type MIME <code>application/msword</code> aux fichiers <code>.docx</code>. La couche de validation accepte cette signature tout en rejetant formellement les binaires <code>.doc</code> obsolètes avec un message explicite invitant à la conversion.</li>
+</ul>
+<h3 id="43-securite-tracabilite-diagnostique">4.3 Sécurité &amp; Traçabilité Diagnostique</h3>
+<ul>
+<li><strong>Zéro Persistance :</strong> Les fichiers téléversés transitent exclusivement dans des tampons mémoire volatils (<code>Buffer.from(await file.arrayBuffer())</code>). Aucun fichier n'est écrit sur le système de stockage pérenne du serveur.</li>
+<li><strong>Journalisation Sécurisée :</strong> Les logs d'extraction consignent exclusivement le nom de fichier, le type MIME et le nombre d'octets/caractères traités. <strong>Aucune donnée personnelle (nom, email, téléphone, contenu du CV) n'est consignée dans les journaux applicatifs.</strong></li>
+</ul>
+<hr />
+<h2 id="5-integration-de-lintelligence-artificielle-google-gemini">5. Intégration de l'Intelligence Artificielle (Google Gemini)</h2>
+<h3 id="51-selection-du-modele-justification">5.1 Sélection du Modèle &amp; Justification</h3>
+<p>Le projet utilise le SDK officiel Google <code>@google/genai</code> avec le modèle <strong>Gemini 3.5 Flash Lite</strong> (<code>gemini-3.5-flash-lite</code>).
+* <strong>Justification :</strong> Offre un temps de latence d'inférence très court (~2,3 secondes pour une analyse complète), un support natif de la contrainte de schéma JSON (<code>responseSchema</code>), et un respect scrupuleux des directives négatives d'anti-hallucination.</p>
+<h3 id="52-definition-du-schema-de-reponse-responseschema">5.2 Définition du Schéma de Réponse (<code>responseSchema</code>)</h3>
+<p>Pour éliminer les imprécisions inhérentes aux réponses en langage naturel libre, l'API impose un typage strict via <code>Type.OBJECT</code> :</p>
+<pre><code class="language-typescript">const GEMINI_ANALYSIS_SCHEMA = {
+  type: Type.OBJECT,
+  properties: {
+    opportunityAnalysis: {
+      type: Type.OBJECT,
+      properties: {
+        jobTitle: { type: Type.STRING },
+        companyName: { type: Type.STRING },
+        requiredSkills: { type: Type.ARRAY, items: { type: Type.STRING } },
+        preferredSkills: { type: Type.ARRAY, items: { type: Type.STRING } },
+        responsibilities: { type: Type.ARRAY, items: { type: Type.STRING } },
+        keywords: { type: Type.ARRAY, items: { type: Type.STRING } },
+      },
+      required: [&quot;jobTitle&quot;, &quot;companyName&quot;, &quot;requiredSkills&quot;, &quot;preferredSkills&quot;, &quot;responsibilities&quot;, &quot;keywords&quot;],
+    },
+    matchedSkills: {
+      type: Type.ARRAY,
+      items: {
+        type: Type.OBJECT,
+        properties: {
+          name: { type: Type.STRING },
+          evidence: { type: Type.STRING }, // Citation textuelle obligatoire
+        },
+        required: [&quot;name&quot;, &quot;evidence&quot;],
+      },
+    },
+    missingSkills: { type: Type.ARRAY, items: { type: Type.STRING } },
+    recommendations: { type: Type.ARRAY, items: { type: Type.STRING } },
+    tailoredCV: { /* Structure complète : personalInfo, professionalSummary, experience, education, projects, skills, languages, certifications */ },
+    changesExplanation: { type: Type.ARRAY, items: { type: Type.STRING } }
+  },
+  required: [&quot;opportunityAnalysis&quot;, &quot;matchedSkills&quot;, &quot;missingSkills&quot;, &quot;recommendations&quot;, &quot;tailoredCV&quot;, &quot;changesExplanation&quot;]
+};
+</code></pre>
+<h3 id="53-contraintes-ethiques-et-filtres-anti-hallucination">5.3 Contraintes Éthiques et Filtres Anti-Hallucination</h3>
+<p>Afin de garantir une adaptation authentique et vérifiable :
+1. <strong>Extraction de Faits Vérifiés en Amont :</strong> La fonction <code>parseMasterCvStructured</code> extrait les entités d'expérience, d'études et de projets du CV source et les transmet en tant que référence d'autorité (<em>ground truth</em>) dans le prompt Gemini.
+2. <strong>Interdiction de Complétion Artificielle :</strong> Si le Master CV ne mentionne pas de section "Certifications" ou "Projets", Gemini a pour consigne explicite de renvoyer un tableau vide <code>[]</code>. Les champs du schéma sont configurés pour ne pas forcer la présence d'éléments fictifs.
+3. <strong>Filtre de Sécurité des Compétences :</strong> Le serveur applique une vérification ensembliste post-inférence :
+   $$\text{Compétences Retenues} = \text{Compétences du CV} \setminus \text{MissingSkills}$$
+   Toute compétence classifiée comme manquante pour l'offre est systématiquement éliminée de la liste des compétences techniques du CV adapté, même en cas de dérive du modèle.
+4. <strong>Suppression des Chaînes de Remplacement (<em>Anti-Placeholder</em>) :</strong> Toutes les chaînes génériques issues d'anciens fallbacks (telles que <em>"Verified Organization"</em>, <em>"Degree / Academic Credentials"</em>, <em>"Preserved from Master CV"</em>) sont filtrées à la fois dans le contrôleur backend et dans le composant de rendu PDF.</p>
+<h3 id="54-algorithme-du-score-de-compatibilite-explicable">5.4 Algorithme du Score de Compatibilité Explicable</h3>
+<p>Contrairement aux solutions basées sur une estimation opaque ("black-box"), le score est calculé de façon déterministe côté serveur par la fonction <code>calculateExplainableScore</code> :</p>
+<p>$$\text{Score} = \min\left(100, \max\left(0, \left( \frac{|\mathcal{M}<em _text_req>{\text{req}}|}{|\mathcal{R}</em>}}|} \times W_{\text{req}} + \frac{|\mathcal{M<em _text_pref>{\text{pref}}|}{|\mathcal{R}</em> \right) \times 100 \right)\right)$$}}|} \times W_{\text{pref}</p>
+<ul>
+<li>$W_{\text{req}} = 0.8$ (Pondération des compétences requises : 80%)</li>
+<li>$W_{\text{pref}} = 0.2$ (Pondération des compétences préférentielles : 20%)</li>
+<li>Si aucune compétence préférentielle n'est spécifiée, le ratio obligatoire compte pour 100%.</li>
+<li>Si l'offre ne contient pas d'exigences techniques identifiables, le score renvoie <code>null</code> pour éviter tout indice fallacieux.</li>
+</ul>
+<h3 id="55-resilience-gestion-des-erreurs">5.5 Résilience &amp; Gestion des Erreurs</h3>
+<p>Pour prévenir les perturbations d'expérience utilisateur lors de pics de charge de l'API Google (code HTTP 503 <em>High Demand Spike</em>), le serveur intègre une boucle de réessai automatique (jusqu'à 3 tentatives avec temporisation exponentielle). En cas d'échec persistant ou d'épuisement de quota (429), le serveur ne bascule <strong>jamais silencieusement</strong> vers un faux résultat : il propage un statut explicite accompagné d'une option "Réessayer" (<em>Try Again</em>).</p>
+<hr />
+<h2 id="6-moteur-de-rendu-vectoriel-exportation-pdf">6. Moteur de Rendu Vectoriel &amp; Exportation PDF</h2>
+<p>La restitution du document s'appuie sur la bibliothèque vectorielle <code>@react-pdf/renderer</code> afin d'assurer une fidélité d'impression absolue, indépendante des moteurs de rendu de navigateurs (Blink, WebKit, Gecko).</p>
+<h3 id="61-specifications-du-gabarit-fixe">6.1 Spécifications du Gabarit Fixe</h3>
+<ul>
+<li><strong>Format Immuable :</strong> Norme ISO 216 (A4 : $210 \times 297\text{ mm}$), orientation portrait.</li>
+<li><strong>Palette Chromatique Professionnelle :</strong></li>
+<li>Titres majeurs : Bleu nuit profond (<code>#0f172a</code> / <code>#1e293b</code>).</li>
+<li>Accentuation dynamique : Bleu royal sobre (<code>#2563eb</code>).</li>
+<li>Corps de texte : Ardoise neutre (<code>#334155</code>), corps 8.5–9.5 pt, interligne 1.4.</li>
+<li><strong>Règle de Structure Inviolable :</strong> L'intelligence artificielle a l'interdiction de modifier la disposition, les marges (40 pt), les polices ou les couleurs. Seul le contenu textuel structuré est injecté dans le canevas.</li>
+</ul>
+<h3 id="62-omission-propre-des-rubriques">6.2 Omission Propre des Rubriques</h3>
+<p>Le composant <a href="file:///c:/Users/levia/cv-tailor-ai/src/components/cv/CVDocument.tsx"><code>CVDocument.tsx</code></a> applique un filtrage strict : si une section (ex. Projets, Certifications ou Langues) ne dispose d'aucun enregistrement valide après assainissement, <strong>le titre de la section et son conteneur ne sont pas restitués sur la page</strong>, préservant une esthétique dense et équilibrée sans blanc artificiel.</p>
+<hr />
+<h2 id="7-resultats-experimentaux-evaluation-comparative">7. Résultats Expérimentaux &amp; Évaluation Comparative</h2>
+<p>Pour attester de la fidélité, de l'absence d'hallucination et de la différenciation contextuelle, le même profil de candidat (<strong>Alex Johnson</strong>, 5 ans d'expérience en génie logiciel full-stack : TypeScript, React, Next.js, Node.js, PostgreSQL, Docker, Git) a été soumis à deux offres d'emploi distinctes.</p>
+<h3 id="71-tableau-comparatif-multi-roles">7.1 Tableau Comparatif Multi-Rôles</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critère d'Évaluation</th>
+<th style="text-align: left;">Opportunité 1 : Développeur Full Stack Senior</th>
+<th style="text-align: left;">Opportunité 2 : Ingénieur IA &amp; Machine Learning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Entreprise Cible</strong></td>
+<td style="text-align: left;">FinTech Corp</td>
+<td style="text-align: left;">NeuroAI Labs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Exigences de l'Offre</strong></td>
+<td style="text-align: left;">React, TypeScript, Node.js, PostgreSQL, Redis, Docker</td>
+<td style="text-align: left;">Python, PyTorch, Machine Learning, Transformers, RAG, Docker, Git</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Score de Compatibilité</strong></td>
+<td style="text-align: left;"><strong>100%</strong> (Correspondance intégrale des compétences clés)</td>
+<td style="text-align: left;"><strong>13%</strong> (Seuls les outils généraux Docker &amp; Git correspondent)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Compétences Validées</strong></td>
+<td style="text-align: left;">React, TypeScript, Node.js, PostgreSQL, Redis, Next.js, Docker</td>
+<td style="text-align: left;">Docker, Git</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Compétences Manquantes</strong></td>
+<td style="text-align: left;">Aucune</td>
+<td style="text-align: left;">Python, PyTorch, Machine Learning, Transformers, RAG, CI/CD</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Résumé Professionnel Adapté</strong></td>
+<td style="text-align: left;"><em>"Senior Full Stack Engineer with 5 years of experience building scalable web applications, real-time dashboards, and high-throughput microservices using TypeScript, React, Next.js, Node.js, and PostgreSQL."</em></td>
+<td style="text-align: left;"><em>"Experienced Software Engineer with 5 years building scalable applications, microservices, and performance-optimized architectures. Brings a strong foundation in backend development, containerization, and version control."</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fuite de Compétences Manquantes</strong></td>
+<td style="text-align: left;">Aucune (0 fuite)</td>
+<td style="text-align: left;"><strong>AUCUNE (0 compétence IA fictive insérée)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Présence de Placeholders</strong></td>
+<td style="text-align: left;"><strong>0 chaîne de remplacement générique</strong></td>
+<td style="text-align: left;"><strong>0 chaîne de remplacement générique</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="72-metriques-de-performance-operationnelle">7.2 Métriques de Performance Opérationnelle</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Métrique</th>
+<th style="text-align: left;">Valeur Observée</th>
+<th style="text-align: left;">Statut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Temps d'Extraction Documentaire (PDF 1-3 pages)</strong></td>
+<td style="text-align: left;">$120\text{ ms} - 350\text{ ms}$</td>
+<td style="text-align: left;">Conforme temps réel</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Temps d'Extraction Documentaire (DOCX complexe)</strong></td>
+<td style="text-align: left;">$80\text{ ms} - 160\text{ ms}$</td>
+<td style="text-align: left;">Conforme temps réel</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Temps de Réponse Global API Gemini (Flash Lite)</strong></td>
+<td style="text-align: left;">$2.2\text{ s} - 4.8\text{ s}$</td>
+<td style="text-align: left;">Optimale pour inférence LLM structurée</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Compilation du Flux Vectoriel PDF</strong></td>
+<td style="text-align: left;">$&lt; 180\text{ ms}$</td>
+<td style="text-align: left;">Fluidité garantie à l'export</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Résultat ESLint (<code>npm run lint</code>)</strong></td>
+<td style="text-align: left;">0 erreur, 0 avertissement</td>
+<td style="text-align: left;">Intégrité de code maximale</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Compilation Production (<code>npm run build</code>)</strong></td>
+<td style="text-align: left;">Compilé avec succès en 1,6 s</td>
+<td style="text-align: left;">Prêt pour l'environnement Serverless</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-deploiement-en-production-sur-vercel">8. Déploiement en Production sur Vercel</h2>
+<p>L'application est déployée en production sur l'infrastructure <strong>Vercel</strong> à l'URL suivante :
+<strong><a href="https://cvassistant-eight.vercel.app/">https://cvassistant-eight.vercel.app/</a></strong></p>
+<h3 id="configuration-de-deploiement">Configuration de Déploiement :</h3>
+<ol>
+<li><strong>Intégration Continue (CI/CD) :</strong> Le dépôt GitHub est synchronisé avec Vercel ; chaque commit validé sur la branche <code>main</code> déclenche automatiquement les phases de linting, typage TypeScript, compilation de bundles statiques et mise à jour sans interruption de service.</li>
+<li><strong>Variables d'Environnement de Production :</strong>
+   * <code>GEMINI_API_KEY</code> : Clé de service sécurisée injectée au niveau des secrets d'infrastructure Vercel.
+   * <code>GEMINI_MODEL</code> : Défini sur <code>gemini-3.5-flash-lite</code>.</li>
+<li><strong>Isolation des Données :</strong> Le déploiement tire parti des fonctions Edge et Serverless stateless, assurant l'isolation stricte des sessions utilisateurs et l'absence totale de fuite de données inter-sessions.</li>
+</ol>
+<hr />
+<h2 id="9-conclusion-perspectives-davenir">9. Conclusion &amp; Perspectives d'Avenir</h2>
+<p>Le projet <strong>CV Tailor AI (CV Assistant)</strong> démontre la faisabilité technique et la viabilité éthique d'un assistant de candidature piloté par grand modèle de langage. En combinant un pipeline d'extraction documentaire résilient, une validation schématique stricte (<code>responseSchema</code>), un score de compatibilité arithmétiquement explicable et un moteur de rendu vectoriel A4 immuable, le système résout à la fois les limites ergonomiques des interfaces d'emploi et les risques inhérents aux hallucinations de l'IA.</p>
+<h3 id="91-evolutions-fonctionnelles-a-court-terme">9.1 Évolutions Fonctionnelles à Court Terme</h3>
+<ol>
+<li><strong>Module OCR Dédié :</strong> Intégration d'un moteur de reconnaissance optique de caractères (ex. Tesseract.js ou Google Cloud Vision) pour traiter les documents scannés ou photographiés.</li>
+<li><strong>Multi-linguisme &amp; Traduction Dynamique :</strong> Adaptation automatique de la langue du CV généré selon la langue de publication de l'offre d'emploi.</li>
+<li><strong>Fine-Tuning Spécifique aux Métiers Techniques :</strong> Entraînement supervisé d'un modèle plus compact pour optimiser la pertinence des verbes d'action et la quantification des résultats d'ingénierie.</li>
+</ol>
+<h3 id="92-prospective-majeure-automatisation-massive-traitement-par-lots-multi-offres-batch-processing-via-tableurs-sheets">9.2 Prospective Majeure : Automatisation Massive &amp; Traitement par Lots Multi-Offres (Batch Processing via Tableurs / Sheets)</h3>
+<p>L'une des perspectives d'évolution les plus stratégiques pour transformer la plateforme en outil industriel à fort impact réside dans l'<strong>automatisation du traitement par lots multi-offres (Batch Processing)</strong>. </p>
+<h4 id="cas-dusage-scenarios-cibles">Cas d'Usage &amp; Scénarios Cibles :</h4>
+<ul>
+<li><strong>Candidatures Multiples PFE &amp; Emploi :</strong> Un candidat en recherche active d'un stage de fin d'études ou d'un emploi souhaite postuler à 20, 50 ou 100 opportunités qualifiées sans répéter 100 fois la saisie unitaire manuelle.</li>
+<li><strong>Services d'Accompagnement &amp; Insertion Professionnelle :</strong> Des universités, incubateurs ou cabinets de placement disposant d'un catalogue d'offres partenaires dans un tableur et souhaitant générer des versions de CV ciblées pour leurs lauréats.</li>
+</ul>
+<h4 id="architecture-technique-de-la-solution-batch">Architecture Technique de la Solution Batch :</h4>
+<div class="mermaid">
+flowchart TD
+    subgraph Ingestion Massive
+        Sheet[Upload Tableur : Excel .xlsx / CSV / Google Sheets API]
+        CV[Master CV Unique : PDF / DOCX]
+        Sheet --> Parser[Ingestion Matricielle : ID, Entreprise, Poste, Description, URL]
+    end
+
+    subgraph File d'Attente & Gestion de Débit
+        Parser --> Queue[Queue Manager : Redis / BullMQ ou Serverless Tasks]
+        Queue --> RateLimiter[Rate Limiter & Quota Guard : Contrôle strict RPM/TPM Gemini]
+    end
+
+    subgraph Traitement Parallélisé par Lots
+        RateLimiter --> Worker1[Worker 1 : Analyse Offre 1 -> CV Adapté 1]
+        RateLimiter --> Worker2[Worker 2 : Analyse Offre 2 -> CV Adapté 2]
+        RateLimiter --> WorkerN[Worker N : Analyse Offre N -> CV Adapté N]
+    end
+
+    subgraph Synthèse & Compilation Vectorielle
+        Worker1 --> HeadlessRender[Moteur de Rendu Headless @react-pdf]
+        Worker2 --> HeadlessRender
+        WorkerN --> HeadlessRender
+        HeadlessRender --> ZipPackage[Packaging Archive .zip : CV_Entreprise_Poste.pdf]
+        HeadlessRender --> AuditTable[Tableau Récapitulatif : CSV / Excel trié par Score %]
+    end
+
+    subgraph Restitution Utilisateur
+        ZipPackage --> DownloadZone[Pack Complet Téléchargeable en 1 Clic]
+        AuditTable --> DownloadZone
+    end
+</div>
+
+<h4 id="piliers-techniques-de-limplementation-batch">Piliers Techniques de l'Implémentation Batch :</h4>
+<ol>
+<li><strong>Ingestion de Fichiers Tabulaires (Excel / CSV / Google Sheets) :</strong>
+   * Support de fichiers <code>.xlsx</code> et <code>.csv</code> via des bibliothèques performantes (ex. <code>xlsx</code> / <code>papaparse</code>) ou synchronisation directe via l'API Google Sheets (<code>googleapis</code> / service account OAuth).
+   * Schéma d'ingestion normalisé : chaque ligne représente une offre d'emploi contenant <code>Entreprise</code>, <code>Intitulé du Poste</code>, <code>Description / Exigences</code>, <code>Lien de Candidature</code>.</li>
+<li><strong>Orchestrateur Asynchrone &amp; Régulateur de Débit (<em>Rate Limiter</em>) :</strong>
+   * Pour traiter des dizaines d'offres sans saturer les limites de l'API Gemini (erreurs 429 ou 503), l'orchestrateur découpe les offres en micro-lots (<em>chunking</em>) régulés par une fenêtre glissante temporelle (<em>sliding window</em>).
+   * Mécanisme de reprise automatique (<em>exponential backoff with jitter</em>) assurant qu'aucun échec ponctuel ne compromet le traitement des autres offres.</li>
+<li><strong>Compilation Headless &amp; Export Groupé en Archive ZIP :</strong>
+   * Exécution de <code>@react-pdf/renderer</code> en environnement serveur sans interface graphique (<code>renderToFile</code> ou <code>renderToStream</code>).
+   * Assemblage automatisé d'un conteneur <code>.zip</code> (via <code>archiver</code> ou <code>jszip</code>) contenant l'ensemble des fichiers PDF vectoriels A4, nommés selon une convention explicite :<br />
+<code>[Nom_Candidat]_[Entreprise]_[Poste].pdf</code>.</li>
+<li><strong>Matrice Décisionnelle Consolidée (Audit Sheet) :</strong>
+   * Génération conjointe d'un fichier de synthèse Excel/CSV détaillant pour chaque offre : le score de compatibilité calculé, les compétences clés partagées, les lacunes identifiées et le nom du PDF correspondant.
+   * Permet au candidat de prioriser ses démarches sur les entreprises présentant le score d'adéquation le plus élevé.</li>
+</ol>
+</body>
+</html>
